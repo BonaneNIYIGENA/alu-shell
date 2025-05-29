@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "b%s" $((${#WATER} + ${#STIR})) | tr '0-9' 'estchol'
+echo b$((${#WATER} + ${#STIR})) | tr '0-9' 'estchol'
