@@ -1,2 +1,2 @@
 #!/bin/bash
-expr substr beslhcteoh $((10-(${#WATER}+${#STIR}))) $((${#WATER}+${#STIR}))
+expr substr bchelbtebshtbeolhc $((17-(${#WATER}+${#STIR}))) $((${#WATER}+${#STIR}))
