@@ -1,2 +1,2 @@
 #!/bin/bash
-expr substr bestchol $((${#WATER}+${#STIR}+1)) 1
+expr substr bchelbtebshtbeolhc $((17-(${#WATER}+${#STIR}))) $((${#WATER}+${#STIR}))
