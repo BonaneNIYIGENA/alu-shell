@@ -1,2 +1,2 @@
 #!/bin/bash
-printf %.$((${#WATER} + ${#STIR}))s bestchol | rev
+printf "bestchol\n" | cut -c1-$((${#WATER} + ${#STIR} + 1)) | rev
