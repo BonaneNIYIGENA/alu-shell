@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( $(printf "%d\n" "0x$(echo $WATER | tr 'water' '01234')") + $(printf "%d\n" "0x$(echo $STIR | tr 'stir' '0123')") ))
+echo $((${#WATER} + ${#STIR})) | tr '0-9' 'bestchol'
