@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "bestchol\n" | cut -c1-$((${#WATER} + ${#STIR} + 1)) | rev
+echo $(((${#WATER} + ${#STIR}) % 10)) | tr '0123456789' 'bestchol'
