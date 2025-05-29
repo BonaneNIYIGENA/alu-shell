@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(((${#WATER} + ${#STIR}))) | tr '0-9' 'bestchol' | grep -o '^.' | head -1
+echo ${"bestchol":$((${#WATER} + ${#STIR})):1}
