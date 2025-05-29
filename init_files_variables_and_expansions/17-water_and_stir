@@ -1,0 +1,2 @@
+#!/bin/bash
+dec1=0;for((i=0;i<${#WATER};i++));do dec1=$((dec1*5+$(expr index water ${WATER:i:1}-1)));done;dec2=0;for((i=0;i<${#STIR};i++));do dec2=$((dec2*4+$(expr index stir ${STIR:i:1}-1)));done;sum=$((dec1+dec2));base=bestchol;res=;while((sum>0));do res="${base:sum%8:1}$res";sum=$((sum/8));done;echo $res
