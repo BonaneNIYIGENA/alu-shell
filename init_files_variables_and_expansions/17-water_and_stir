@@ -1,2 +1,2 @@
 #!/bin/bash
-expr substr shtbeolhc $(($((${#WATER} + ${#STIR} - 9) * -1 + 1)) $((${#WATER} + ${#STIR}))
+expr substr shtbeolhc $((${#WATER} - ${#STIR} + 1)) $((${#WATER} + ${#STIR} - 12))
