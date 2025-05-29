@@ -1,2 +1,2 @@
 #!/bin/bash
-echo b$((${#WATER} + ${#STIR})) | tr '0-9' 'estchol'
+printf "bestchol\n" | cut -b 1-$(((${#WATER} + ${#STIR}) % 10 + 1)) | rev
