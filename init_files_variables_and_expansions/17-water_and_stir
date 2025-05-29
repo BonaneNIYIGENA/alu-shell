@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((${#WATER} + ${#STIR})) | tr '0-9' 'bestchol'
+printf "b%s" $((${#WATER} + ${#STIR})) | tr '0-9' 'estchol'
