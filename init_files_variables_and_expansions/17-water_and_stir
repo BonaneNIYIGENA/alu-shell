@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(((${#WATER} + ${#STIR}))) | tr '0123456789' 'bestchol'
+printf "%s 5i %s 4i + 8o p\n" "$(echo "${WATER:-water}" | tr water 01234)" "$(echo "${STIR:-stir}" | tr stir 0123)" | dc | tr 01234567 bestchol
