@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "8o %s 5i %s 4i + p\n" "$(echo "${WATER:-water}" | tr water 01234)" "$(echo "${STIR:-stir}" | tr stir 0123)" | dc | tr 01234567 bestchol
+printf "8o %s 5i %s 5i + p\n" "$(echo "$WATER" | tr water 01234)" "$(echo "$STIR" | tr 'stir.' 01234)" | dc | tr 01234567 bestchol
