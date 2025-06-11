@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script lists non-hidden files in current directory, showing only text after first dash
+
+for file in *; do
+    if [ -f "$file" ]; then  # Check if it's a regular file (not directory)
+        # Extract everything after first dash
+        result="${file#*-}"
+        # If there was no dash, keep original filename
+        if [ "$result" = "$file" ]; then
+            echo "$file"
+        else
+            echo "$result"
+        fi
+    fi
+done
