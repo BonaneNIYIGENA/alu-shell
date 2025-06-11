@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script tells the story of each user in /etc/passwd in a creative format
+# This script tells the story of each user in /etc/passwd in the required format
 
 while IFS=: read -r username password uid gid gecos homedir shell; do
     # Extract the first part of GECOS (before first comma) for user info
