@@ -1,2 +1,2 @@
 #!/bin/bash
-dc <<< "8o5i$(echo $WATER | tr 'watre' '01234') $(echo $STIR | tr 'sti.r' '01234') +p" | tr '01234567' 'bestchol'
+echo "obase=8;ibase=5;$(echo $WATER | tr 'watre' '01234') + $(echo $STIR | tr 'sti.r' '01234')" | dc | tr '01234567' 'bestchol'
