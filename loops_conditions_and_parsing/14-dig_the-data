@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script analyzes Apache logs to show IPs and status codes grouped by occurrence count
+# This script analyzes Apache logs showing IPs and status codes grouped by occurrence count
 
-awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr | awk '{printf "%6d %s %s\n", $1, $2, $3}'
+awk '{ips[$1 " " $9]++} END {for (ip in ips) print ips[ip], ip}' apache-access.log | sort -nr | awk '{printf "%6d %s %s\n", $1, $2, $3}'
