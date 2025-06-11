@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script loops from 1 to 10 with special messages for 4th and 8th iterations
+# 4 is considered unlucky (sounds like "death"), 8 is lucky (sounds like "prosper")
+
+count=1
+while [ "$count" -le 10 ]
+do
+    if [ "$count" -eq 4 ]
+    then
+        echo "bad luck"  # 4 sounds like "death" in Chinese
+    elif [ "$count" -eq 8 ]
+    then
+        echo "good luck"  # 8 sounds like "prosper" in Chinese
+    else
+        echo "Best School"
+    fi
+    count=$((count + 1))
+done
