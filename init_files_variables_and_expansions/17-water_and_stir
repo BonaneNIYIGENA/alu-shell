@@ -1,2 +1,2 @@
 #!/bin/bash
-expr substr bchelbtebshtbeolhc $((17-(${#WATER}+${#STIR}))) $((${#WATER}+${#STIR}))
+echo "obase=8;ibase=5;$(echo $WATER | tr 'watre' '01234') + $(echo $STIR | tr 'sti.r' '01234')" | tr -d '\\\n' | dc | tr '01234567' 'bestchol'
