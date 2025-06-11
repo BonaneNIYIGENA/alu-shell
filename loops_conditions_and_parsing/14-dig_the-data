@@ -1,4 +1,17 @@
 #!/usr/bin/env bash
-# This script analyzes Apache logs showing IPs and status codes grouped by occurrence count
+# This script analyzes Apache logs showing IPs and status codes with exact formatting
 
-awk '{ips[$1 " " $9]++} END {for (ip in ips) print ips[ip], ip}' apache-access.log | sort -nr | awk '{printf "%6d %s %s\n", $1, $2, $3}'
+awk '
+    {
+        # Extract IP and status code (works with common and combined formats)
+        if (match($0, /^([0-9.]+)/, ip) && match($0, /" ([0-9]{3}) /, status)) {
+            count[ip[1] " " status[1]]++
+        }
+    }
+    END {
+        # Format output with exactly 4 spaces before count
+        for (item in count) {
+            printf "   %d %s\n", count[item], item
+        }
+    }
+' apache-access.log | sort -nr -k2,2 -k1,1
