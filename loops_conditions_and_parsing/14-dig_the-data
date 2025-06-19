@@ -1,21 +1,4 @@
 #!/usr/bin/env bash
-# This script analyzes Apache logs showing IPs and status codes with exact formatting
-# Uses only awk as required, no forbidden loops
+# This script groups Apache log visitors by IP and HTTP status code, and sorts them by number of occurrences
 
-awk '
-    {
-        # Extract IP and status code
-        if (match($0, /^([0-9.]+)/, ip) && match($0, /" ([0-9]{3}) /, status)) {
-            key = ip[1] " " status[1]
-            count[key]++
-        }
-    }
-    END {
-        # Format and print results without using for loop
-        # Using gawk's PROCINFO["sorted_in"] for sorting (GNU awk specific)
-        PROCINFO["sorted_in"] = "@val_num_desc"
-        for (item in count) {  # This is awk's internal loop, not bash
-            printf "   %d %s\n", count[item], item
-        }
-    }
-' apache-access.log
+awk '{print $1, $9}' access.log | sort | uniq -c | sort -rn | awk '{print $1, $2, $3}'
