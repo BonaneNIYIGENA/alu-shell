@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Outputs 'root' twice as specified
+# Outputs 'root' twice with padding to make 16 total chars
 
-echo "root"
-echo "root"
+printf "%-8s\n%-8s\n" "root" "root"
