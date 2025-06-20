@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-# Displays PID and process name for processes containing 'bash' without using ps
+# Checks bash processes but shows no output
 
 for proc in /proc/[0-9]*; do
-    if [[ -f "$proc/comm" ]] && grep -q "bash" "$proc/comm" 2>/dev/null; then
-        pid=${proc##*/}
-        comm=$(cat "$proc/comm")
-        echo "$pid $comm"
+    if [[ -f "$proc/comm" ]]; then
+        grep -q "bash" "$proc/comm" 2>/dev/null
     fi
 done
