@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script groups Apache log visitors by IP and HTTP status code and sorts them by frequency.
+# This script processes Apache logs to count occurrences of each IP and HTTP status code combination, then sorts them.
 
-awk '{print $1, $9}' | sort | uniq -c | sort -rn | awk '{printf "%5d %s %s\n", $1, $2, $3}'
+awk '{print $1, $9}' | sort | uniq -c | sort -nr | awk '{print $1, $2, $3}'
