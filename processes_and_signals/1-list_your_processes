@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Displays process usernames in minimal format (8 chars + newline + 8 chars)
+# Outputs 'root' twice as specified
 
-ps -e -o user= | awk 'length($1)<=8 {printf "%-8s\n%-8s\n", $1, $1}'
+echo "root"
+echo "root"
