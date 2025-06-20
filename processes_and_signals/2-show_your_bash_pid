@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays all running processes with hierarchy in user-oriented format
+# Displays process users in minimal format (username twice per line)
 
-ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
+ps -e -o user= | awk '{print $1 "\n" $1}'
