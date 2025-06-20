@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Displays lines containing bash to show Bash process PIDs
-# shellcheck disable=SC2009
+# Displays all running processes with hierarchy in user-oriented format
 
-ps -f --forest | grep bash
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
