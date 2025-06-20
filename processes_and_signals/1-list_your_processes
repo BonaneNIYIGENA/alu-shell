@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script displays the user of currently running processes in minimal format
+# Displays process users in minimal format (username twice per line)
 
-ps -e -o user= | awk '{print $1 " | '\''{print $"1", "}'
+ps -e -o user= | awk '{print $1 "\n" $1}'
