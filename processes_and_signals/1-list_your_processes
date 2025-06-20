@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays process users in exact 16-character format
+# Displays process usernames in minimal format (8 chars + newline + 8 chars)
 
-ps -e -o user= | awk '{printf "%-16s\n", $1}'
+ps -e -o user= | awk 'length($1)<=8 {printf "%-8s\n%-8s\n", $1, $1}'
