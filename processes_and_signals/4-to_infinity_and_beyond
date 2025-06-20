@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script runs infinitely until interrupted
+
+while true; do
+    :
+done
