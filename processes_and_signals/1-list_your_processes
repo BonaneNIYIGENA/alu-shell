@@ -1,12 +1,7 @@
-#!/usr/bin/env bash
-# Displays processes with corrected headers and timestamp format
 
-ps -e -o user,start,cmd --forest | awk '
-BEGIN {
-    printf "%-8s %-8s %s\n", "USER", "STARTED", "CMD"
-}
-NR>1 {
-    cmd = $0
-    sub(/^[^[:space:]]+[[:space:]]+[^[:space:]]+[[:space:]]+/, "", cmd)
-    printf "%-8s %-8s %s\n", $1, $2, cmd
-}'
+#!/usr/bin/env bash
+# Script that displays a list of currently running processes
+# Shows all processes for all users, including those without TTY
+# Displays in user-oriented format with process hierarchy
+
+ps auxf
