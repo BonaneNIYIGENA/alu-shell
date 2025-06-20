@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Outputs 'root' twice with padding to make 16 total chars
+# Displays all running processes with hierarchy in user-oriented format
 
-printf "%-8s\n%-8s\n" "root" "root"
+ps ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
