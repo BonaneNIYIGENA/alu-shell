@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-# This script displays currently running processes in a user-oriented format with hierarchy
+# This script displays the user of currently running processes in minimal format
 
-ps -e -o user,start,cmd --forest | awk '
-BEGIN {
-    printf "%-8s %-8s %s\n", "USER", "STARTED", "CMD"
-}
-NR>1 {
-    cmd = $0
-    sub(/^[^[:space:]]+[[:space:]]+[^[:space:]]+[[:space:]]+/, "", cmd)
-    printf "%-8s %-8s %s\n", $1, $2, cmd
-}'
+ps -e -o user= | awk '{print $1 " | '\''{print $"1", "}'
