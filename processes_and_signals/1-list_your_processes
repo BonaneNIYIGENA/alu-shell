@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script displays a list of all currently running processes in a user-oriented hierarchical format
+# This script displays a list of all currently running processes with full STARTED time and command
 
-ps -eo user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command --forest
+ps -eo user,lstart,command --no-headers | awk '{printf "%-8s %-10s %s\n", $1, $4":"$5":"$6, substr($0, index($0,$8))}' | sed '1iUSER     STARTED    COMMAND'
