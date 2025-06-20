@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
-# Displays all running processes with hierarchy in user-oriented format
+# Displays processes with corrected headers and timestamp format
 
-ps ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
+ps -e -o user,start,cmd --forest | awk '
+BEGIN {
+    printf "%-8s %-8s %s\n", "USER", "STARTED", "CMD"
+}
+NR>1 {
+    cmd = $0
+    sub(/^[^[:space:]]+[[:space:]]+[^[:space:]]+[[:space:]]+/, "", cmd)
+    printf "%-8s %-8s %s\n", $1, $2, cmd
+}'
