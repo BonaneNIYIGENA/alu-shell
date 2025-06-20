@@ -20,7 +20,7 @@ case "$1" in
         echo "manage_my_process restarted"
         ;;
     *)
-        echo "Usage: manage_my_process {start|stop|restart}" >&2
+        echo "Usage: manage_my_process {start|stop|restart}"
         exit 1
         ;;
 esac
